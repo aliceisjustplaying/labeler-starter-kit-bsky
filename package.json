@@ -1,0 +1,40 @@
+{
+  "name": "zodiacsigns-bsky",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "npx tsx src/main.ts",
+    "dev": "npx tsx --watch src/main.ts",
+    "format": "bunx prettier --write .",
+    "lint": "bunx eslint .",
+    "lint:fix": "bunx eslint --fix ."
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.11.1",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.7.4",
+    "@types/ws": "^8.5.12",
+    "@types/express": "^4.17.21",
+    "eslint": "^9.11.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.8.0"
+  },
+  "dependencies": {
+    "@atproto/api": "^0.13.8",
+    "@skyware/jetstream": "^0.1.6",
+    "@skyware/labeler": "^0.1.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "pino": "^9.4.0",
+    "pino-pretty": "^11.2.2",
+    "prom-client": "^15.1.3"
+  }
+}
