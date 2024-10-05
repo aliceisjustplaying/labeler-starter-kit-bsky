@@ -30,11 +30,18 @@ CURSOR_UPDATE_INTERVAL=10000
 
 A `cursor.txt` file containing the time in microseconds also needs to be present. If it doesn't exist, it will be created with the current time.
 
-Create the necessary posts from the labeler account, fill out `src/constants.ts` with the related post rkeys ([record keys](https://atproto.com/specs/record-key)), label IDs and so on, then run `bunx tsx src/set-labels.ts` to create/update all labels at once.
+Fill out the label IDs, names, descriptions etc. in `src/constants.ts` to your heart's desire. Run `bun set-posts` to create/update all posts at once, then copy/paste the related post rkeys ([record keys](https://atproto.com/specs/record-key)) into `src/constants.ts`. Run `bun set-labels` to create/update all labels at once.
 
-Alternatively, use `bunx @skyware/labeler label add` and edit `src/constants.ts` after.
+Alternatively, create the posts by hand, edit `src/constants.ts` and use `bunx @skyware/labeler label add` to add the labels.
 
-The server connects to [Jetstream](https://github.com/bluesky-social/jetstream), which provides a WebSocket endpoint that emits ATProto events in JSON. There is a public instance available at `wss://jetstream.atproto.tools/subscribe`.
+The server connects to [Jetstream](https://github.com/bluesky-social/jetstream), which provides a WebSocket endpoint that emits ATProto events in JSON. There are [many public instances](https://github.com/bluesky-social/jetstream/blob/main/README.md#public-instances) available:
+
+| Hostname                          | Region  |
+| --------------------------------- | ------- |
+| `jetstream1.us-east.bsky.network` | US-East |
+| `jetstream2.us-east.bsky.network` | US-East |
+| `jetstream1.us-west.bsky.network` | US-West |
+| `jetstream2.us-west.bsky.network` | US-West |
 
 The server needs to be reachable outside your local network using the URL you provided during the account setup (typically using a reverse proxy such as [Caddy](https://caddyserver.com/)):
 

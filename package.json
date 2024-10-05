@@ -7,27 +7,31 @@
     "dev": "npx tsx --watch src/main.ts",
     "format": "bunx prettier --write .",
     "lint": "bunx eslint .",
-    "lint:fix": "bunx eslint --fix ."
+    "lint:fix": "bunx eslint --fix .",
+    "set-posts": "bunx tsx src/set-posts.ts",
+    "set-labels": "bunx tsx src/set-labels.ts"
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write"
   },
   "devDependencies": {
-    "@eslint/js": "^9.11.1",
+    "@eslint/js": "^9.12.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/better-sqlite3": "^7.6.11",
     "@types/eslint__js": "^8.42.3",
+    "@types/express": "^4.17.21",
     "@types/node": "^22.7.4",
     "@types/ws": "^8.5.12",
-    "@types/express": "^4.17.21",
-    "eslint": "^9.11.1",
+    "eslint": "^9.12.0",
     "prettier": "^3.3.3",
+    "tsx": "^4.19.1",
     "typescript": "^5.6.2",
     "typescript-eslint": "^8.8.0"
   },
   "dependencies": {
-    "@atproto/api": "^0.13.8",
-    "@skyware/jetstream": "^0.1.6",
+    "@atproto/api": "^0.13.11",
+    "@skyware/bot": "^0.3.3",
+    "@skyware/jetstream": "^0.1.8",
     "@skyware/labeler": "^0.1.7",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
