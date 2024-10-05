@@ -4,10 +4,16 @@ import { BSKY_IDENTIFIER, BSKY_PASSWORD } from './config.js';
 import { LABELS } from './constants.js';
 
 const bot = new Bot();
-await bot.login({
-  identifier: BSKY_IDENTIFIER,
-  password: BSKY_PASSWORD,
-});
+
+try {
+  await bot.login({
+    identifier: BSKY_IDENTIFIER,
+    password: BSKY_PASSWORD,
+  });
+} catch (error) {
+  console.error('Error logging in: ', error);
+  process.exit(1);
+}
 
 process.stdout.write('WARNING: This will delete all posts in your profile. Are you sure you want to continue? (y/n) ');
 
@@ -42,8 +48,8 @@ for (const labelName of labelNames) {
 
 console.log('Label rkeys:');
 for (const [name, rkey] of Object.entries(labelRkeys)) {
-  console.log(`    name: '${name}'`);
-  console.log(`    rkey: '${rkey}'`);
+  console.log(`    name: '${name}',`);
+  console.log(`    rkey: '${rkey}',`);
 }
 
 const deletePost = await bot.post({ text: 'Like this post to delete all labels.' });
