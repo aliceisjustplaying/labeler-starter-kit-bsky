@@ -63,7 +63,11 @@ function deleteAllLabels(did: string, labels: Set<string>) {
 
 function addOrUpdateLabel(did: string, rkey: string, labels: Set<string>) {
   const newLabel = LABELS.find((label) => label.rkey === rkey);
-  logger.info(`New label: ${newLabel?.identifier}`);
+  if (!newLabel) {
+    logger.warn(`New label not found: ${rkey}. Likely liked a post that's not one for labels.`);
+    return;
+  }
+  logger.info(`New label: ${newLabel.identifier}`);
 
   if (labels.size >= LABEL_LIMIT) {
     try {
@@ -75,8 +79,8 @@ function addOrUpdateLabel(did: string, rkey: string, labels: Set<string>) {
   }
 
   try {
-    labelerServer.createLabel({ uri: did, val: newLabel!.identifier });
-    logger.info(`Successfully labeled ${did} with ${newLabel?.identifier}`);
+    labelerServer.createLabel({ uri: did, val: newLabel.identifier });
+    logger.info(`Successfully labeled ${did} with ${newLabel.identifier}`);
   } catch (error) {
     logger.error(`Error adding new label: ${error}`);
   }

@@ -22,8 +22,8 @@ DID=did:plc:xxx
 SIGNING_KEY=xxx
 BSKY_IDENTIFIER=xxx
 BSKY_PASSWORD=xxx
-PORT=4002
-METRICS_PORT=4102
+PORT=4100
+METRICS_PORT=4101
 FIREHOSE_URL=wss://jetstream.atproto.tools/subscribe
 CURSOR_UPDATE_INTERVAL=10000
 ```
@@ -47,7 +47,7 @@ The server needs to be reachable outside your local network using the URL you pr
 
 ```Caddyfile
 labeler.example.com {
-	reverse_proxy 127.0.0.1:4002
+	reverse_proxy 127.0.0.1:4100
 }
 ```
 
