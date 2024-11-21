@@ -4,6 +4,8 @@ Use this repository to get started with your own Bluesky Labeler. Click the "Use
 
 As an example, this repository includes a labeler for setting your favorite of the five elements (Earth, Fire, Air, Water, Love) to your profile. You can edit the labels, descriptions, and other parameters in the `src/constants.ts` file.
 
+**This project requires familiarity with TypeScript, the command line and Linux. I hope to improve the onboarding experience in the future.**
+
 ## Support My Work
 
 If you find this project helpful, please consider supporting my work:
