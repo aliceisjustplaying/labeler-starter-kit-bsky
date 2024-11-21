@@ -13,8 +13,8 @@ If you find this project helpful, please consider supporting my work:
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) 21 or later
-- [Bun](https://bun.sh/)
+- [Node.js](https://nodejs.org/) v22.11.0 (LTS) for the runtime
+- [Bun](https://bun.sh/) (latest) for package management
 
 ## Setup
 
@@ -29,6 +29,7 @@ DID=did:plc:xxx
 SIGNING_KEY=xxx
 BSKY_IDENTIFIER=xxx
 BSKY_PASSWORD=xxx
+HOST=127.0.0.1
 PORT=4100
 METRICS_PORT=4101
 FIREHOSE_URL=wss://jetstream.atproto.tools/subscribe
